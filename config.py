@@ -1,0 +1,13 @@
+INTERVAL_TASK_OPENLCD = 2000
+INTERVAL_TASK_MQTT = 2000
+
+WIFI_SSID = "TenWiFi"
+WIFI_PASSWORD = "MatKhau"
+
+MQTT_SERVER = "mqtt.ohstem.vn"
+MQTT_PORT = 1883
+MQTT_USER = "demo"
+MQTT_PASSWORD = "8888"
+
+MQTT_TOPIC_V1 = "demo/feeds/V1"
+MQTT_TOPIC_V2 = "demo/feeds/V2"
