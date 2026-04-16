@@ -46,6 +46,7 @@ def task_run():
     try:
         temp = task_readSensors.current_temp
         light = task_readSensors.current_light
+        motion = task_readSensors.current_motion
 
         if temp is not None:
             client.publish(config.MQTT_TOPIC_V2, str(temp))
@@ -54,6 +55,10 @@ def task_run():
         if light is not None:
             client.publish(config.MQTT_TOPIC_V1, str(light))
             print(f"[MQTT] Đã gửi Ánh sáng: {light} -> {config.MQTT_TOPIC_V1}")
+
+        if motion is not None:
+            client.publish(config.MQTT_TOPIC_V3, str(motion))
+            print(f"[MQTT] Đã gửi Chuyển động: {motion} -> {config.MQTT_TOPIC_V1}")
             
     except Exception as e:
         print("[MQTT] Lỗi quá trình gửi tin: ", e)
